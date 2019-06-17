@@ -23,11 +23,6 @@ class Server {
         this.app.use(express.urlencoded({ extended: false }));
 
         this.app.use(express.static(path.join(__dirname, 'public')));
-
-        this.app.use(express.static(__dirname + '/dist/ng'));
-        this.app.get('*', function (req, res) {
-            res.sendFile(path.join(__dirname + '/dist/ng/index.html'));
-        });
     }
 
     private routes(): void {

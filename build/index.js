@@ -21,10 +21,6 @@ class Server {
         this.app.use(express_1.default.json());
         this.app.use(express_1.default.urlencoded({ extended: false }));
         this.app.use(express_1.default.static(path_1.default.join(__dirname, 'public')));
-        this.app.use(express_1.default.static(__dirname + '/dist/ng'));
-        this.app.get('*', function (req, res) {
-            res.sendFile(path_1.default.join(__dirname + '/dist/ng/index.html'));
-        });
     }
     routes() {
         this.app.use('/api/users', userRoutes_1.default);
